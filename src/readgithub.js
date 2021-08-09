@@ -11,8 +11,9 @@
         provider: 'jsdelivr',
         cdn: true,
         repo: $(this).data('repo'),
-        branch: 'main',
-        folder: $(this).data('folder'),
+        branch: $(this).data('branch'),
+        basefolder: $(this).data('basefolder'),
+        subfolder: $(this).data('subfolder'),
         file: 'README.md',
         loading: 'Loading',
         fail: 'Couldn\'t connect to GitHub',
@@ -21,7 +22,7 @@
         renderer: function(file) {
           return file
         }
-      }, options)
+      }, options);
 
       // INIT
       // --------------------------------------------------
@@ -31,17 +32,17 @@
       if(config.provider == 'rawgit') {
         if(config.cdn) url += 'cdn.'
         url += 'rawgit.com'
-        url = [ url, config.repo, config.branch, config.folder, config.file ].join('/')
+        url = [ url, config.repo, config.branch, config.basefolder, config.file ].join('/')
         //console.log(url);
       }
       else if(config.provider == 'jsdelivr') {
         url += 'cdn.jsdelivr.net/gh'
-        url = [ url, config.repo + '@' + config.branch, config.folder, config.file ].join('/')
+        url = [ url, config.repo + '@' + config.branch, config.basefolder, config.file ].join('/')
         //console.log(url);
       }
       else if(config.provider == 'github') {
         url += 'raw.githubusercontent.com'
-        url = [ url, config.repo, config.branch, config.folder, config.file ].join('/');
+        url = [ url, config.repo, config.branch, config.basefolder, config.file ].join('/');
         //console.log(url);
       }
 
@@ -108,7 +109,6 @@
         }
 
         // If get succeeds render the content using the renderer
-        console.log(file);
         gh.html(config.renderer(file))
       })
       .fail(function() {
@@ -117,7 +117,6 @@
       })
       .always(function() {
         //
-        console.log('test');
       })
 
     }) // return this.each()
