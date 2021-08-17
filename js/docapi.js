@@ -31,10 +31,11 @@
     $.getJSON("menu.json", function(data){
 
         var docapi_menu = $('.docapi_menu');
-        var html = '';
+        var html = '<li><a class="in_load" data-subfolder="" data-file="'+rd_file+'" href="#">Overview</a></li>';
 
         $.each(data.items, function() {
             html += '<li>';
+            
 
             var id = this.id;
             var name = this.name;
