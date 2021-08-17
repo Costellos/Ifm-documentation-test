@@ -1,0 +1,73 @@
+{ 
+    "items":[
+        {
+            "id":"top_1",
+            "name":"Products Description",
+            "subfolder":"ProductsDescription",
+            "file":"README.md",
+            "type":"doc_readme"
+        },
+        {
+            "id":"top_2",
+            "name":"Getting Started",
+            "subfolder":"GettingStarted",
+            "file":"README.md",
+            "type":"doc_readme",
+            "has_children":true,
+            "children": [
+                {"id":"top_2_child_1","name":"Getting Started","subfolder":"GettingStarted","file":"getting_started.md","type":"doc_readme"}
+                
+            ]
+        },
+        {
+            "id":"top_3",
+            "name":"Application Notes",
+            "subfolder":"ApplicationNotes",
+            "file":"README.md",
+            "type":"doc_readme",
+            "has_children":true,
+            "children": [
+                {"id":"top_3_child_1","name":"Multi Path Interference","subfolder":"ApplicationNotes","file":"mpi.md","type":"doc_readme"}
+                
+            ]
+        },
+        {
+            "id":"top_4",
+            "name":"Datasheets",
+            "subfolder":"Datasheets",
+            "file":"README.md",
+            "type":"doc_readme"
+        },
+        {
+            "id":"top_5",
+            "name":"Parameters",
+            "subfolder":"Parameters",
+            "file":"README.md",
+            "type":"doc_readme",
+            "has_children":true,
+            "children": [
+                {"id":"top_5_child_3","name":"Parameters Overview","subfolder":"Parameters","file":"parameters_overview.md","type":"doc_readme"}
+                
+            ]
+        },
+        {
+            "id":"top_6",
+            "name":"ifm3d library",
+            "url":"http://www.google.com",
+            "type":"ex"
+        },
+        {
+            "id":"top_7",
+            "name":"ROS",
+            "url":"http://www.google.com",
+            "type":"ex"
+        },
+        {
+            "id":"top_8",
+            "name":"FAQs",
+            "subfolder":"FAQ",
+            "file":"README.md",
+            "type":"doc_readme"
+        }
+    ]
+}
