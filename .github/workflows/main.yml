@@ -1,46 +1,28 @@
-# This is a basic workflow to help you get started with Actions
+name: commitfiles
+on: [push]
 
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  job1:
+    runs-on: [ubuntu-latest]
     steps:
-    - name: Make Request
-      id: myRequest
-      uses: fjogeleit/http-request-action@master
-      with:
-        url: "https://costellocoding.com/ifm/github_json/"
-    - name: Show Response
-      run: echo ${{ steps.myRequest.outputs.response }}
-    - name: create-json
-      id: create-json
-      uses: jsdaniell/create-json@1.1.2
-      with:
-        name: "menu.json"
-        json: ${{ steps.myRequest.outputs.response }}
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        # Optional. Used by `git-push`
-        # See https://git-scm.com/docs/git-push#_options
-        push_options: '--force'
-
-        # Optional. Skip internal call to `git fetch`
-        skip_fetch: true 
-        commit_message: Update Json Menu
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Modify value # Tried to modify the files based on existing testfile.txt
+        run: |
+          echo 'Add value2' >> testfile.txt
+      - name: move to dir # Move the generated files into output folder
+        run: |
+          mkdir -p output
+          yes| cp -rf testfile.txt ./output/
+      - name: Commit files # commit the output folder
+        run: |
+          git config --local user.email "costellos@costellocoding.com"
+          git config --local user.name "GitHub Action test"
+          git add ./output
+          git commit -m "Add changes"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          branch: B77 #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
