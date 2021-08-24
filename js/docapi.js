@@ -156,6 +156,8 @@
             url = [ url, repo, branch, basefolder, rd_file ].join('/');
         }
 
+        console.log(url);
+
         var docapi_content = $('.docapi_content');
         docapi_content.empty();
 

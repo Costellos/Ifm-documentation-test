@@ -1,73 +1,62 @@
-{ 
-    "items":[
-        {
-            "id":"top_1",
-            "name":"Products Description",
-            "subfolder":"ProductsDescription",
-            "file":"README.md",
-            "type":"doc_readme"
-        },
-        {
-            "id":"top_2",
-            "name":"Getting Started",
-            "subfolder":"GettingStarted",
-            "file":"README.md",
-            "type":"doc_readme",
-            "has_children":true,
-            "children": [
-                {"id":"top_2_child_1","name":"Getting Started","subfolder":"GettingStarted","file":"getting_started.md","type":"doc_readme"}
-                
-            ]
-        },
-        {
-            "id":"top_3",
-            "name":"Application Notes",
-            "subfolder":"ApplicationNotes",
-            "file":"README.md",
-            "type":"doc_readme",
-            "has_children":true,
-            "children": [
-                {"id":"top_3_child_1","name":"Multi Path Interference","subfolder":"ApplicationNotes","file":"mpi.md","type":"doc_readme"}
-                
-            ]
-        },
-        {
-            "id":"top_4",
-            "name":"Datasheets",
-            "subfolder":"Datasheets",
-            "file":"README.md",
-            "type":"doc_readme"
-        },
-        {
-            "id":"top_5",
-            "name":"Parameters",
-            "subfolder":"Parameters",
-            "file":"README.md",
-            "type":"doc_readme",
-            "has_children":true,
-            "children": [
-                {"id":"top_5_child_3","name":"Parameters Overview","subfolder":"Parameters","file":"parameters_overview.md","type":"doc_readme"}
-                
-            ]
-        },
-        {
-            "id":"top_6",
-            "name":"ifm3d library",
-            "url":"http://www.google.com",
-            "type":"ex"
-        },
-        {
-            "id":"top_7",
-            "name":"ROS",
-            "url":"http://www.google.com",
-            "type":"ex"
-        },
-        {
-            "id":"top_8",
-            "name":"FAQs",
-            "subfolder":"FAQ",
-            "file":"README.md",
-            "type":"doc_readme"
-        }
-    ]
+{
+	"items": [{
+		"name": "Products Description",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "ProductsDescription"
+	}, {
+		"name": "Getting Started",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "GettingStarted",
+		"has_children": true,
+		"children": [{
+			"name": "Getting Started",
+			"type": "doc_readme",
+			"file": "getting_started.md",
+			"subfolder": "GettingStarted"
+		}]
+	}, {
+		"name": "Application Notes",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "ApplicationNotes",
+		"has_children": true,
+		"children": [{
+			"name": "Multi Path Interference",
+			"type": "doc_readme",
+			"file": "mpi.md",
+			"subfolder": "ApplicationNotes"
+		}]
+	}, {
+		"name": "Datasheets",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "Datasheets"
+	}, {
+		"name": "Parameters",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "Parameters",
+		"has_children": true,
+		"children": [{
+			"name": "Parameters Overview",
+			"type": "doc_readme",
+			"file": "parameters_overview.md",
+			"subfolder": "Parameters"
+		}]
+	}, {
+		"name": "ifm3d library",
+		"type": "ex",
+		"url": "INSERT-LINK"
+	}, {
+		"name": "ROS",
+		"type": "ex",
+		"url": "INSERT-LINK"
+	}, {
+		"name": "FAQ",
+		"type": "doc_readme",
+		"file": "README.md",
+		"subfolder": "FAQ"
+	}]
 }

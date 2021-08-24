@@ -7,6 +7,6 @@ Table of content
 - [Application Notes](ApplicationNotes)
 - [Datasheets](Datasheets)
 - [Parameters](Parameters)
-- [ifm3d library](INSERT-LINK)
-- [ROS](INSERT-LINK)
+- [ifm3d library](http://www.google.com)
+- [ROS](http://www.google.com)
 - [FAQ](FAQ)
