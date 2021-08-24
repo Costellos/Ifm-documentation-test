@@ -1,5 +1,5 @@
-# name: commitfiles
-# on: [push]
+name: commitfiles
+on: [push]
 
 # jobs:
 #   job1:
