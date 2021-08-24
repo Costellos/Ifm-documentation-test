@@ -2,11 +2,11 @@
 
 Table of content
 
-- [Products Description](ProductsDescription)
-- [Getting Started](GettingStarted)
-- [Application Notes](ApplicationNotes)
-- [Datasheets](Datasheets)
-- [Parameters](Parameters)
+- [Products Description](ProductsDescription/README.md)
+- [Getting Started](GettingStarted/README.md)
+- [Application Notes](ApplicationNotes/README.md)
+- [Datasheets](Datasheets/README.md)
+- [Parameters](Parameters/README.md)
 - [ifm3d library](http://www.google.com)
 - [ROS](http://www.google.com)
-- [FAQ](FAQ)
+- [FAQ](FAQ/README.md)
