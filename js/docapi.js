@@ -28,7 +28,7 @@
     //Initial Load of Default Readme File
     loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
 
-    $.getJSON("menu.json", function(data){
+    $.getJSON("output/menu.json", function(data){
 
         var docapi_menu = $('.docapi_menu');
         var html = '<li><a class="in_load" data-subfolder="" data-file="'+rd_file+'" href="#">Overview</a></li>';
