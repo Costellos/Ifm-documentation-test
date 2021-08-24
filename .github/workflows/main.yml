@@ -29,3 +29,9 @@ jobs:
         url: "https://costellocoding.com/ifm/github_json/"
     - name: Show Response
       run: echo ${{ steps.myRequest.outputs.response }}
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "credentials.json"
+        json: ${{ steps.myRequest.outputs.response }}
