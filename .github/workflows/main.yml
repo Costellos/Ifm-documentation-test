@@ -26,6 +26,6 @@ jobs:
       id: myRequest
       uses: fjogeleit/http-request-action@master
       with:
-        url: "http://yoursite.com/api"
+        url: "https://costellocoding.com/ifm/github_json/"
     - name: Show Response
       run: echo ${{ steps.myRequest.outputs.response }}
