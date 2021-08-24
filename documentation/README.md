@@ -7,6 +7,6 @@ Table of content
 - [Application Notes](ApplicationNotes/README.md)
 - [Datasheets](Datasheets/README.md)
 - [Parameters](Parameters/README.md)
-- [ifm3d library](https://github.com/ifm/documentation/tree/main/O3R)
+- [ifm3d library](https://github.com/ifm/documentation/blob/main/O3R/README.md)
 - [ROS](http://www.google.com)
 - [FAQ](FAQ/README.md)
