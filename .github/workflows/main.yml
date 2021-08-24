@@ -33,5 +33,5 @@ jobs:
       id: create-json
       uses: jsdaniell/create-json@1.1.2
       with:
-        name: "credentials.json"
+        name: "menu.json"
         json: ${{ steps.myRequest.outputs.response }}
