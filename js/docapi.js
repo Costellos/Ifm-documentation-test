@@ -2,47 +2,42 @@
     
     //Set Vars
     var docapi_container = $('.docapi');
-    var url = 'https://raw.githubusercontent.com';
+    var raw_url = 'https://raw.githubusercontent.com';
     var repo = docapi_container.attr('data-repo');
-    var basefolder = docapi_container.attr('data-basefolder');
     var branch = docapi_container.attr('data-branch');
     var subfolder = docapi_container.attr('data-subfolder');
-    var rd_file = 'README.md';
-
-    if(docapi_container.attr('data-file') != ''){
-        rd_file = docapi_container.attr('data-file');
-    }else{
-        rd_file = 'README.md';
-    }
+    var rd_file = docapi_container.attr('data-file');
 
 
     //If Has hash, set vars and load has, else load default settings.
     if(window.location.hash) {
         
         var hash = window.location.hash;
-        if(hash.indexOf("github.com") >= 0){
-            var hashObj = hash.split('/');
-            var ex_repo = hashObj[3]+'/'+hashObj[4];
-            var ex_branch = hashObj[6];
-            var ex_basefolder = hashObj[7];
-            subfolder = '';
+        var hashObj = hash.split('/');
+        var hash_username = hashObj[0].replace('#','');
+        var hash_repo_name = hashObj[1];
+        var hash_repo = hash_username + '/' + hash_repo_name;
+        var hash_branch = hashObj[2];
+        var hash_file = hashObj.slice(-1).pop();
 
-            //Load external hashed repo.
-            loadMarkdown(url,ex_repo,ex_basefolder,ex_branch,subfolder,rd_file);
-        }else{
-            var hashObj = hash.split('/');
-            console.log(hashObj);
-            subfolder = hashObj[0].replace('#', '');
-            rd_file = hashObj[1];
+        var remove_first = hashObj.slice();
+        remove_first.splice(0,3);
+        var remove_last = remove_first.slice();
+        remove_last.splice(-1,1);
+        var hash_subfolder = remove_last.join("/");
 
-            //Load hashed Repo
-            loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
-        }
-        
+        console.log(hash_repo);
+        console.log(hash_branch);
+        console.log(hash_file);
+        console.log(hash_subfolder);
+
+        loadMarkdown(raw_url,hash_repo,hash_branch,hash_subfolder,hash_file);
+
     }else{
-        //Initial Load of Default Readme File
-        loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
+        loadMarkdown(raw_url,repo,branch,subfolder,rd_file);
     }
+
+    
 
     
 
@@ -50,23 +45,24 @@
 
         var docapi_menu = $('.docapi_menu');
 
-        console.log(subfolder);
-
-        var html = '<li><a class="in_load" data-subfolder="" data-file="'+rd_file+'" href="#">Overview</a></li>';
-        
-
+        var html = '<li><a class="in_load" data-repo="'+repo+'" data-branch="'+branch+'" data data-subfolder="'+subfolder+'" data-file="'+rd_file+'" href="#">Overview</a></li>';
+    
         $.each(data.items, function() {
             html += '<li>';
-            
 
-            var id = this.id;
+
             var name = this.name;
 
             var type = this.type;
+            
 
             if(type != 'ex'){
                 var subfolder = this.subfolder;
                 var file = this.file;
+                
+                var repo = this.repo;
+                var branch = this.branch;
+                var subfolder = this.subfolder;
 
                 if(this.has_children){
                     var has_children = this.has_children;
@@ -76,12 +72,12 @@
                     var children = '';
                 }
 
-                html += buildDocItem(id,name,subfolder,file,has_children,children);
+                html += buildDocItem(name,repo,branch,subfolder,file,has_children,children);
 
             }else{
                 var url = this.url;
 
-                html += buildExItem(id,name,url);
+                html += buildExItem(name,url);
             }
 
             html += '</li>';
@@ -96,34 +92,23 @@
     $(document).on("click",".in_load",function(e){
         //Set vars, set link to this link, set subfolder, and rd_file to readme file.
         var link = $(this);
-        var subfolder = link.attr('data-subfolder');
-        var rd_file = link.attr('data-file');
 
-        //Check if subfolder is an external repo, if so, set new variables.
-        if(subfolder.indexOf("github.com") >= 0){
-            var full_url = subfolder;
-            var full_url_Obj =  full_url.split('/');
-            var ex_repo = full_url_Obj[3]+'/'+full_url_Obj[4];
-            var ex_branch = full_url_Obj[6];
-            var ex_basefolder = full_url_Obj[7];
-            subfolder = '';
-
-            //Fetch and Load Markdown, pass global or parent veriables.
-            loadMarkdown(url,ex_repo,ex_basefolder,ex_branch,subfolder,rd_file);
-        }else{
-            //Fetch and Load Markdown, pass global or parent veriables.
-        loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
-        }
-
+        var link_repo = link.attr('data-repo');
+        var link_branch = link.attr('data-branch');
+        var link_subfolder = link.attr('data-subfolder');
+        var link_file = link.attr('data-file');
         
+        loadMarkdown(raw_url,link_repo,link_branch,link_subfolder,link_file);
 
     });
 
-    function buildDocItem(id,name,subfolder,file,has_children,children){
+    function buildDocItem(name,repo,branch,subfolder,file,has_children,children){
 
         var html = '';
 
-        html += '<a class="in_load" data-subfolder="'+subfolder+'" data-file="'+file+'" href="#'+subfolder+'/'+file+'">'+name+'</a>';
+        var href = '#'+repo+'/'+branch+'/'+subfolder+'/'+file;
+
+        html += '<a class="in_load" data-repo="'+repo+'" data-branch="'+branch+'" data data-subfolder="'+subfolder+'" data-file="'+file+'" href="'+href+'">'+name+'</a>';
 
         if(has_children){
             html += '<ul>';
@@ -148,12 +133,12 @@
                         var children = '';
                     }
     
-                    html += buildDocItem(id,name,subfolder,file,type,has_children,children);
+                    html += buildDocItem(name,repo,branch,subfolder,file,type,has_children,children);
     
                 }else{
                     var url = this.url;
     
-                    html += buildExItem(id,name,url);
+                    html += buildExItem(name,url);
                 }
     
                 html += '</li>';
@@ -165,7 +150,7 @@
         return html;
     }
 
-    function buildExItem(id,name,url){
+    function buildExItem(name,url){
         var html = '';
 
         html += '<a href="'+url+'" target="_blank">'+name+'</a>';
@@ -185,12 +170,12 @@
         return result;
     }
 
-    function loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file){
+    function loadMarkdown(url,repo,branch,subfolder,rd_file){
 
         if(subfolder != ''){
-            url = [ url, repo, branch, basefolder, subfolder, rd_file ].join('/');
+            url = [ url, repo, branch, subfolder, rd_file ].join('/');
         }else{
-            url = [ url, repo, branch, basefolder, rd_file ].join('/');
+            url = [ url, repo, branch, rd_file ].join('/');
         }
 
         console.log(url);
