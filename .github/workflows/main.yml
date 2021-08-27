@@ -1,4 +1,4 @@
-name: Scheduled Build
+name: Update Json Menu
 on:
   workflow_dispatch:
   schedule:
@@ -14,7 +14,7 @@ jobs:
         fetch-depth: 0
     - name: Download Feed
       run: |-
-        curl "[url]" | jq . > output_file.json
+        curl "https://costellocoding.com/ifm/github_json/" | jq . > output_file.json
     - name: Commit and push changes
       run: |-
         git diff
