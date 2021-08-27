@@ -1,6 +1,6 @@
 name: Update Json Menu
 on:
-  workflow_dispatch:
+  push:
   schedule:
     - cron:  '*/15 * * * *'
 
