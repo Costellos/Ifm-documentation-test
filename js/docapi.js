@@ -1,6 +1,6 @@
 (function($) {
     
-    //Set Vars
+    //Set Default Vars
     var docapi_container = $('.docapi');
     var raw_url = 'https://raw.githubusercontent.com';
     var repo = docapi_container.attr('data-repo');
@@ -26,21 +26,15 @@
         remove_last.splice(-1,1);
         var hash_subfolder = remove_last.join("/");
 
-        console.log(hash_repo);
-        console.log(hash_branch);
-        console.log(hash_file);
-        console.log(hash_subfolder);
-
         loadMarkdown(raw_url,hash_repo,hash_branch,hash_subfolder,hash_file);
 
     }else{
         loadMarkdown(raw_url,repo,branch,subfolder,rd_file);
     }
 
-    
 
     
-
+    //Get menu.json. loop through each item, and build the menu items out of that.(Might breakdown more for modulary and clarity in future).
     $.getJSON("menu.json", function(data){
 
         var docapi_menu = $('.docapi_menu');
@@ -102,6 +96,8 @@
 
     });
 
+
+    //Function to build readme items in the menu.
     function buildDocItem(name,repo,branch,subfolder,file,has_children,children){
 
         var html = '';
@@ -150,6 +146,7 @@
         return html;
     }
 
+    //Function to build external link items in the menu.
     function buildExItem(name,url){
         var html = '';
 
@@ -158,6 +155,8 @@
         return html;
     }
 
+
+    //Function to get markdown from url.
     function getMarkdown(url) {
         var result="";
         $.ajax({
@@ -170,6 +169,8 @@
         return result;
     }
 
+
+    //Function to fetch and load markdown from url.
     function loadMarkdown(url,repo,branch,subfolder,rd_file){
 
         if(subfolder != ''){
@@ -177,8 +178,6 @@
         }else{
             url = [ url, repo, branch, rd_file ].join('/');
         }
-
-        console.log(url);
 
         var docapi_content = $('.docapi_content');
         docapi_content.empty();
