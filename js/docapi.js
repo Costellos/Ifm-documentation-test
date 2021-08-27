@@ -9,29 +9,51 @@
     var subfolder = docapi_container.attr('data-subfolder');
     var rd_file = 'README.md';
 
-
     if(docapi_container.attr('data-file') != ''){
         rd_file = docapi_container.attr('data-file');
     }else{
         rd_file = 'README.md';
     }
 
-    if(window.location.hash) {
-        console.log('has hash');
 
+    //If Has hash, set vars and load has, else load default settings.
+    if(window.location.hash) {
+        
         var hash = window.location.hash;
-        var hashObj = hash.split('/');
-        subfolder = hashObj[0].replace('#', '');
-        rd_file = hashObj[1];
+        if(hash.indexOf("github.com") >= 0){
+            var hashObj = hash.split('/');
+            var ex_repo = hashObj[3]+'/'+hashObj[4];
+            var ex_branch = hashObj[6];
+            var ex_basefolder = hashObj[7];
+            subfolder = '';
+
+            //Load external hashed repo.
+            loadMarkdown(url,ex_repo,ex_basefolder,ex_branch,subfolder,rd_file);
+        }else{
+            var hashObj = hash.split('/');
+            console.log(hashObj);
+            subfolder = hashObj[0].replace('#', '');
+            rd_file = hashObj[1];
+
+            //Load hashed Repo
+            loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
+        }
+        
+    }else{
+        //Initial Load of Default Readme File
+        loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
     }
 
-    //Initial Load of Default Readme File
-    loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
+    
 
     $.getJSON("menu.json", function(data){
 
         var docapi_menu = $('.docapi_menu');
+
+        console.log(subfolder);
+
         var html = '<li><a class="in_load" data-subfolder="" data-file="'+rd_file+'" href="#">Overview</a></li>';
+        
 
         $.each(data.items, function() {
             html += '<li>';
@@ -70,15 +92,30 @@
         console.log("An error has occurred.");
     });
 
-
+    //On Click, reload new markdown form repo.
     $(document).on("click",".in_load",function(e){
-        var test = $(this);
+        //Set vars, set link to this link, set subfolder, and rd_file to readme file.
+        var link = $(this);
+        var subfolder = link.attr('data-subfolder');
+        var rd_file = link.attr('data-file');
 
+        //Check if subfolder is an external repo, if so, set new variables.
+        if(subfolder.indexOf("github.com") >= 0){
+            var full_url = subfolder;
+            var full_url_Obj =  full_url.split('/');
+            var ex_repo = full_url_Obj[3]+'/'+full_url_Obj[4];
+            var ex_branch = full_url_Obj[6];
+            var ex_basefolder = full_url_Obj[7];
+            subfolder = '';
 
-        var subfolder = test.attr('data-subfolder');
-        var rd_file = test.attr('data-file');
-
+            //Fetch and Load Markdown, pass global or parent veriables.
+            loadMarkdown(url,ex_repo,ex_basefolder,ex_branch,subfolder,rd_file);
+        }else{
+            //Fetch and Load Markdown, pass global or parent veriables.
         loadMarkdown(url,repo,basefolder,branch,subfolder,rd_file);
+        }
+
+        
 
     });
 
