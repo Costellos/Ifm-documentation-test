@@ -1,6 +1,6 @@
 # Everything related to the O3R family
 
-### Table of content
+###### Table of content
 
 - [Products Description](ProductsDescription/README.md)
 - [Getting Started](GettingStarted/README.md)
