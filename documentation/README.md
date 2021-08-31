@@ -1,6 +1,6 @@
 # Everything related to the O3R family
 
-Table of content
+### Table of content{.doc_toc_header}
 
 - [Products Description](ProductsDescription/README.md)
 - [Getting Started](GettingStarted/README.md)
@@ -10,3 +10,4 @@ Table of content
 - [ifm3d library](https://github.com/ifm/documentation/blob/main/O3R/README.md)
 - [ROS](http://www.google.com)
 - [FAQ](FAQ/README.md)
+{.doc_toc_list}
