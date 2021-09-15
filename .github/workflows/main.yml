@@ -20,7 +20,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Run PHP and Update Menu
-      run: php ./.php/index.php
+      run: php ./php/index.php
     - name: Commit and push changes
       run: |-
         git diff
