@@ -1,3 +1,6 @@
 # README - Application notes
 
-- [Multi Path Interference](mpi.md)
+| Table of content                  |
+|-----------------------------------|
+| [Multi Path Interference](mpi.md) |
+| End Table of content              |
