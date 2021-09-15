@@ -1,3 +1,5 @@
+
+
 name: Update Json Menu
 on:
   push:
@@ -8,13 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Setup PHP without any shared extensions except mbstring
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
+        extensions: none, mbstring
     - name: Check out repo
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Download Feed
-      run: |-
-        curl "https://costellocoding.com/ifm/github_json/" | jq . > menu.json
+    - name: Run PHP and Update Menu
+      run: php ./.php/index.php
     - name: Commit and push changes
       run: |-
         git diff
