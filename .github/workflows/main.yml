@@ -14,15 +14,11 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Setup PHP without any shared extensions except mbstring
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.0'
-        extensions: none, mbstring
     - name: Run PHP and Update Menu
       run: |
-        php "./php/index.php"
-        curl "./php/index.php" | jq . > menu.json
+        cd php
+        php index.php
+        cd ../
     - name: Commit and push changes
       run: |-
         git diff

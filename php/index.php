@@ -30,8 +30,13 @@ $md = return_md($contents_url,$Parsedown);
 
 //Build Json array from the gitub repo and echo it.
 $json_array['items'] = rec_md_get($md, $base_info,$Parsedown);
-header('Content-Type: application/json');
-echo json_encode($json_array);
+// header('Content-Type: application/json');
+// echo json_encode($json_array);
+
+$json = json_encode($json_array);
+$file = fopen('../menu.json','w+') or die("File not found");
+fwrite($file, $json);
+fclose($file);
 
 //Gets the string between two other strings inside of a string.
 function get_string_between($string, $start, $end){
