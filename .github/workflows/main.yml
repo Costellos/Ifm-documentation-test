@@ -20,7 +20,8 @@ jobs:
       with:
         fetch-depth: 0
     - name: Run PHP and Update Menu
-      run: php ./php/index.php
+      run: | 
+        curl "./php/index.php" | jq . > menu.json
     - name: Commit and push changes
       run: |-
         git diff
