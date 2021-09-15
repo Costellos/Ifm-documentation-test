@@ -10,17 +10,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Setup PHP without any shared extensions except mbstring
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.0'
         extensions: none, mbstring
-    - name: Check out repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     - name: Run PHP and Update Menu
-      run: | 
+      run: |
+        php "./php/index.php"
         curl "./php/index.php" | jq . > menu.json
     - name: Commit and push changes
       run: |-
