@@ -2,6 +2,6 @@
 
 | Table of content|
 |-|
-| [Parameters overview](/Parametersparameters.md)|
-| [Acquisition parameters](/ParametersAcquisitionSettings/README.md)|
-| [Filters](/ParametersFilters/README.md)|
+| [Parameters overview](/Parameters/parameters.md)|
+| [Acquisition parameters](/Parameters/AcquisitionSettings/README.md)|
+| [Filters](/Parameters/Filters/README.md)|
