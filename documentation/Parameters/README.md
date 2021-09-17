@@ -2,6 +2,6 @@
 
 | Table of content|
 |-|
-| [Parameters overview](/Parameters/parameters.md)|
-| [Acquisition parameters](/Parameters/AcquisitionSettings/README.md)|
-| [Filters](/Parameters/Filters/README.md)|
+| [Parameters overview](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/parameters.md)|
+| [Acquisition parameters](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/AcquisitionSettings/README.md)|
+| [Filters](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/README.md)|
