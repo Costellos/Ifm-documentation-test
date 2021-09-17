@@ -2,13 +2,13 @@
 
 | Table of content|
 |-|
-| [Filtering process overview](filteringProcess.md)|
-| [Maximum distance noise](maxDistNoise.md)|
-| [Minimum amplitude](minAmplitude.md)|
-| [Minimum reflectivity](minReflectivity.md)|
-| [Adaptive noise bilateral filter](bilateralFilter.md)|
-| [Median filter](median.md)|
-| [Temporal filter](temporalFilter.md)|
-| [Mixed pixel filter](mixedPixelFilter.md)|
-| [Symmetry threshold](symmetryThreshold.md)|
-| [Stray light filter](strayLight.md)|
+| [Filtering process overview](/Parameters/Filters/filteringProcess.md)|
+| [Maximum distance noise](/Parameters/Filters/maxDistNoise.md)|
+| [Minimum amplitude](/Parameters/Filters/minAmplitude.md)|
+| [Minimum reflectivity](/Parameters/Filters/minReflectivity.md)|
+| [Adaptive noise bilateral filter](/Parameters/Filters/bilateralFilter.md)|
+| [Median filter](/Parameters/Filters/median.md)|
+| [Temporal filter](/Parameters/Filters/temporalFilter.md)|
+| [Mixed pixel filter](/Parameters/Filters/mixedPixelFilter.md)|
+| [Symmetry threshold](/Parameters/Filters/symmetryThreshold.md)|
+| [Stray light filter](/Parameters/Filters/strayLight.md)|
