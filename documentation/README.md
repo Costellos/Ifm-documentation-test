@@ -2,11 +2,11 @@
 
 | Table of content|
 |-|
-| [Products Description](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/ProductsDescription/README.md)|
-| [Getting Started](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/GettingStarted/README.md)|
-| [Parameters](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/README.md)|
-| [Datasheets](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Datasheets/README.md)|
-| [Application Notes](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/ApplicationNotes/README.md)|
+| [Products Description](ProductsDescription/README.md)|
+| [Getting Started](GettingStarted/README.md)|
+| [Parameters](Parameters/README.md)|
+| [Datasheets](Datasheets/README.md)|
+| [Application Notes](ApplicationNotes/README.md)|
 | [ifm3d library](INSERT-LINK)|
 | [ROS](INSERT-LINK)|
-| [FAQ](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/FAQ/README.md)|
+| [FAQ](FAQ/README.md)|
