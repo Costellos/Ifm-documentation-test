@@ -2,13 +2,13 @@
 
 | Table of content|
 |-|
-| [Filtering process overview](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/filteringProcess.md)|
-| [Maximum distance noise](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/maxDistNoise.md)|
-| [Minimum amplitude](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/minAmplitude.md)|
-| [Minimum reflectivity](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/minReflectivity.md)|
-| [Adaptive noise bilateral filter](/https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/bilateralFilter.md)|
-| [Median filter](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/median.md)|
-| [Temporal filter](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/temporalFilter.md)|
-| [Mixed pixel filter](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/mixedPixelFilter.md)|
-| [Symmetry threshold](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/symmetryThreshold.md)|
-| [Stray light filter](https://github.com/Costellos/Ifm-documentation-test/tree/master/documentation/Parameters/Filters/strayLight.md)|
+| [Filtering process overview](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/filteringProcess.md)|
+| [Maximum distance noise](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/maxDistNoise.md)|
+| [Minimum amplitude](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/minAmplitude.md)|
+| [Minimum reflectivity](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/minReflectivity.md)|
+| [Adaptive noise bilateral filter](/http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/bilateralFilter.md)|
+| [Median filter](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/median.md)|
+| [Temporal filter](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/temporalFilter.md)|
+| [Mixed pixel filter](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/mixedPixelFilter.md)|
+| [Symmetry threshold](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/symmetryThreshold.md)|
+| [Stray light filter](http://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/Parameters/Filters/strayLight.md)|

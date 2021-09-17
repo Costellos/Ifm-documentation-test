@@ -193,7 +193,7 @@ function rec_md_get($md,$base_info,$Parsedown){
 //Gets the MD and retunrs it.
 function return_md($url,$Parsedown){
     
-    $contents = file_get_contents($url);
+    $contents = file_get_contents($url.'?flush_cache=True');
     $md = $Parsedown->text($contents);
 
     return $md;
