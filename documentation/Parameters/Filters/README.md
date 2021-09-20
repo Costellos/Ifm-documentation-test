@@ -2,7 +2,7 @@
 
 | Table of content|
 |-|
-| [Filtering process overview](Filters/filteringProcess.md)|
+| [Filtering process overview](Parameters/Filters/bilateralFilter.md)|
 | [Maximum distance noise](Filters/maxDistNoise.md)|
 | [Minimum amplitude](Filters/minAmplitude.md)|
 | [Minimum reflectivity](Filters/minReflectivity.md)|
