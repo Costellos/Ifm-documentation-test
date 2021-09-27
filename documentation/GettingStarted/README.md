@@ -2,4 +2,4 @@
 
 | Table of content|
 |-|
-| [Getting Started](~/documentation/GettingStarted/README.md)|
+| [Getting Started](../GettingStarted/README.md)|
