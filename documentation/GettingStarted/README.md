@@ -2,4 +2,4 @@
 
 | Table of content|
 |-|
-| [Getting Started](getting_started.md)|
+| [Getting Started](./documentation/GettingStarted/getting_started.md)|
