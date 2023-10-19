@@ -2,4 +2,4 @@
 
 | Table of content|
 |-|
-| [Getting Started](https://github.com/Costellos/Ifm-documentation-test/blob/master/documentation/GettingStarted/getting_started.md)|
+| [Getting Started](/GettingStarted/getting_started.md)|
